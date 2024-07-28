@@ -1,33 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const api = {
+    key: "a1ca0b5b2de6fabb8700403134dc2525",
+    base: "https://api.openweathermap.org/data/2.5/"
+  }
+
+  const [city, setCity] = useState("");
+
+  const getData = () => {
+    fetch(`${api.base}weather?q=${city}$units=metric&APPID=${api.key}`)
+    .then((res)=> res.json())
+    .then((result) => {
+      console.log(result);
+    });
+  }
+ 
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <input type="text" placeholder="City name" />
+        <button onClick={getData}>Search</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
