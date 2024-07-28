@@ -9,7 +9,7 @@ export default function WeatherData({ data }) {
     const weather =  data.weather && data.weather[0];
 
     return (
-        <div>
+        <div className="weather-data">
             <h2>{data.name}</h2>
             <p>Temperature: {data.main.temp ? `${data.main.temp} °C`: 'Not available' }</p>
             {weather && (

@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='app'>
         <input type="text" placeholder="City name" value={city} onChange={(e) => setCity(e.target.value)}/>
         <button onClick={getData}>Search</button>
       </div>
