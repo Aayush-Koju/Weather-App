@@ -11,9 +11,14 @@ export default function WeatherData({ data }) {
     return (
         <div>
             <h2>{data.name}</h2>
-            <p>Temperature: {weather.main.temp ? weather.main.temp: 'Not available' }</p>
-            <p>Weather: {weather.main}</p>
-            <p>Description: {weather.description}</p>
+            <p>Temperature: {data.main.temp ? `${data.main.temp} °C`: 'Not available' }</p>
+            {weather && (
+                <>
+                    <p>Weather: {weather.main}</p>
+                    <p>Description: {weather.description}</p>
+                </>
+            )}
+            <p>Humidity: {data.main.humidity}%</p>
         </div>
     );  
 }
