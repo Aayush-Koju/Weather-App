@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import WeatherData from './components/WeatherData';
 
 function App() {
 
@@ -9,12 +10,13 @@ function App() {
   }
 
   const [city, setCity] = useState("");
+  const [data, setData] = useState({});
 
   const getData = () => {
-    fetch(`${api.base}weather?q=${city}$units=metric&APPID=${api.key}`)
+    fetch(`${api.base}weather?q=${city}&units=metric&APPID=${api.key}`)
     .then((res)=> res.json())
     .then((result) => {
-      console.log(result);
+      setData(result);
     });
   }
  
@@ -22,11 +24,12 @@ function App() {
   return (
     <>
       <div>
-        <input type="text" placeholder="City name" />
+        <input type="text" placeholder="City name" value={city} onChange={(e) => setCity(e.target.value)}/>
         <button onClick={getData}>Search</button>
       </div>
+      <WeatherData data={data} />
     </>
-  )
+  );
 }
 
 export default App
