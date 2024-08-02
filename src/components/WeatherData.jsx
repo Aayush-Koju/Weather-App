@@ -16,19 +16,22 @@ export default function WeatherData({ data }) {
     <>
       <img src={image} alt={weather.description} />
       <div className="weather-data">
-        <h2>{data.name}</h2>
-        <p>
-          Temperature:{" "}
-          {data.main.temp ? `${data.main.temp} °C` : "Not available"}
-        </p>
+        <h2>{data.main.temp ? `${data.main.temp} °C` : "Not available"}</h2>
+        <p>{data.name}</p>
         {weather && (
           <>
-            <p>Weather: {weather.main}</p>
-            <p>Description: {weather.description}</p>
+            <p>
+              Weather <br /> {weather.main}
+            </p>
+            <p>
+              Description <br /> {weather.description}
+            </p>
             {/* <p>Description: {weather.icon}</p> */}
           </>
         )}
-        <p>Humidity: {data.main.humidity}%</p>
+        <p>
+          Humidity <br /> {data.main.humidity}%
+        </p>
       </div>
     </>
   );
