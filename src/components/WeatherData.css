@@ -1,0 +1,20 @@
+.weather-data-output {
+    background-color: #4198ea;
+    margin: 10px;
+    border-radius: 10px;
+    color: #f0f6fd;
+    margin-bottom: 10px;
+}
+
+.weather-data-output img {
+    margin-top: 10px;
+}
+
+.data-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.place-name {
+    font-size: 25px;
+}

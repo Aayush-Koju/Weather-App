@@ -24,8 +24,8 @@ function App() {
 
   return (
     <>
-      <AppInfo />
       <div className="app">
+        <AppInfo className="app-info" />
         <input
           type="text"
           placeholder="City name"

@@ -1,4 +1,5 @@
 import React from "react";
+import "./WeatherData.css";
 // import { useState } from "react";
 
 export default function WeatherData({ data }) {
@@ -14,24 +15,31 @@ export default function WeatherData({ data }) {
 
   return (
     <>
-      <img src={image} alt={weather.description} />
-      <div className="weather-data">
-        <h2>{data.main.temp ? `${data.main.temp} °C` : "Not available"}</h2>
-        <p>{data.name}</p>
-        {weather && (
-          <>
+      <div className="weather-data-output">
+        <img src={image} alt={weather.description} />
+        <div className="weather-data">
+          <h2>{data.main.temp ? `${data.main.temp} °C` : "Not available"}</h2>
+          <p className="place-name">
+            <b>{data.name}</b>
+          </p>
+          <div className="data-flex">
+            {weather && (
+              <>
+                <p>
+                  <b> Weather </b> <br /> {weather.main}
+                </p>
+                <p>
+                  <b> Description </b> <br /> {weather.description}
+                </p>
+                {/* <p>Description: {weather.icon}</p> */}
+              </>
+            )}
             <p>
-              Weather <br /> {weather.main}
+              <b>Humidity </b>
+              <br /> {data.main.humidity}%
             </p>
-            <p>
-              Description <br /> {weather.description}
-            </p>
-            {/* <p>Description: {weather.icon}</p> */}
-          </>
-        )}
-        <p>
-          Humidity <br /> {data.main.humidity}%
-        </p>
+          </div>
+        </div>
       </div>
     </>
   );
