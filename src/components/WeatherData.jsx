@@ -6,7 +6,11 @@ export default function WeatherData({ data }) {
   // const [image, setImage] = useState("");
 
   if (!data || !data.main) {
-    return <div>No data available. Please enter a city name and search.</div>;
+    return (
+      <div className="weather-data-output">
+        No data available. Please enter a city name and search.
+      </div>
+    );
   }
 
   const weather = data.weather && data.weather[0];

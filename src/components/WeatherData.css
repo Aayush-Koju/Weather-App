@@ -1,20 +1,33 @@
 .weather-data-output {
     background-color: #4198ea;
-    margin: 10px;
+    padding: 20px;
     border-radius: 10px;
+    text-align: center;
     color: #f0f6fd;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 300px;
 }
 
 .weather-data-output img {
-    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.weather-data-output h2 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.weather-data-output .place-name {
+    font-size: 1.5em;
+    margin: 10px 0;
 }
 
 .data-flex {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
-.place-name {
-    font-size: 25px;
+.data-flex {
+    margin: 0;
 }
