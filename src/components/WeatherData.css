@@ -1,3 +1,11 @@
+.weather-data-container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 600px;
+    background-color: red;
+}
+
 .weather-data-output {
     background-color: #4198ea;
     padding: 20px;

@@ -26,13 +26,15 @@ function App() {
     <>
       <div className="app">
         <AppInfo className="app-info" />
-        <input
-          type="text"
-          placeholder="City name"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <button onClick={getData}>Search</button>
+        <div className="search">
+          <input
+            type="text"
+            placeholder="City name"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <button onClick={getData}>Search</button>
+        </div>
       </div>
       <WeatherData data={data} />
     </>

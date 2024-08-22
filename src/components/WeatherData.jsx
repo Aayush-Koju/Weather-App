@@ -19,29 +19,31 @@ export default function WeatherData({ data }) {
 
   return (
     <>
-      <div className="weather-data-output">
-        <img src={image} alt={weather.description} />
-        <div className="weather-data">
-          <h2>{data.main.temp ? `${data.main.temp} °C` : "Not available"}</h2>
-          <p className="place-name">
-            <b>{data.name}</b>
-          </p>
-          <div className="data-flex">
-            {weather && (
-              <>
-                <p>
-                  <b> Weather </b> <br /> {weather.main}
-                </p>
-                <p>
-                  <b> Description </b> <br /> {weather.description}
-                </p>
-                {/* <p>Description: {weather.icon}</p> */}
-              </>
-            )}
-            <p>
-              <b>Humidity </b>
-              <br /> {data.main.humidity}%
+      <div className="weather-data-container">
+        <div className="weather-data-output">
+          <img src={image} alt={weather.description} />
+          <div className="weather-data">
+            <h2>{data.main.temp ? `${data.main.temp} °C` : "Not available"}</h2>
+            <p className="place-name">
+              <b>{data.name}</b>
             </p>
+            <div className="data-flex">
+              {weather && (
+                <>
+                  <p>
+                    <b> Weather </b> <br /> {weather.main}
+                  </p>
+                  <p>
+                    <b> Description </b> <br /> {weather.description}
+                  </p>
+                  {/* <p>Description: {weather.icon}</p> */}
+                </>
+              )}
+              <p>
+                <b>Humidity </b>
+                <br /> {data.main.humidity}%
+              </p>
+            </div>
           </div>
         </div>
       </div>
