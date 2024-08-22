@@ -5,46 +5,55 @@ import "./WeatherData.css";
 export default function WeatherData({ data }) {
   // const [image, setImage] = useState("");
 
-  if (!data || !data.main) {
-    return (
-      <div className="weather-data-output">
-        No data available. Please enter a city name and search.
-      </div>
-    );
-  }
+  const checkNull = () => {
+    if (!data || !data.main) {
+      return (
+        <div className="weather-data">
+          No data available.
+          <br /> Please enter a city name and search.
+        </div>
+      );
+    }
+    return null;
+  };
 
-  const weather = data.weather && data.weather[0];
+  const weather = data && data.weather ? data.weather[0] : null;
 
-  const image = ` https://openweathermap.org/img/wn/${weather.icon}@2x.png`;
+  const image = weather
+    ? ` https://openweathermap.org/img/wn/${weather.icon}@2x.png`
+    : "";
 
   return (
     <>
       <div className="weather-data-container">
         <div className="weather-data-output">
-          <img src={image} alt={weather.description} />
-          <div className="weather-data">
-            <h2>{data.main.temp ? `${data.main.temp} °C` : "Not available"}</h2>
-            <p className="place-name">
-              <b>{data.name}</b>
-            </p>
-            <div className="data-flex">
-              {weather && (
-                <>
+          {checkNull()}
+          {weather && (
+            <>
+              <img src={image} alt={weather.description} />
+              <div className="weather-data">
+                <h2>
+                  {data.main.temp ? `${data.main.temp} °C` : "Not available"}
+                </h2>
+                <p className="place-name">
+                  <b>{data.name}</b>
+                </p>
+                <div className="data-flex">
                   <p>
                     <b> Weather </b> <br /> {weather.main}
                   </p>
                   <p>
                     <b> Description </b> <br /> {weather.description}
                   </p>
-                  {/* <p>Description: {weather.icon}</p> */}
-                </>
-              )}
-              <p>
-                <b>Humidity </b>
-                <br /> {data.main.humidity}%
-              </p>
-            </div>
-          </div>
+
+                  <p>
+                    <b>Humidity </b>
+                    <br /> {data.main.humidity}%
+                  </p>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </>

@@ -2,20 +2,22 @@
     display: flex;
     flex-direction: row;
     width: 70vw;
-    height: 600px;
-    background-color: red;
+    height: 65%;
     margin: 10px;
     justify-content: center;
 }
 
 .weather-data-output {
-    background-color: #4198ea;
+    background-color: #112A46;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     color: #f0f6fd;
-    margin-top: 20px;
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
 }
 
 .weather-data-output img {
@@ -35,7 +37,8 @@
 
 .data-flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .data-flex {
