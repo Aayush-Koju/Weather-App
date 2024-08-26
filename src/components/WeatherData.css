@@ -8,7 +8,7 @@
 }
 
 .weather-data-output {
-    background-color: #112A46;
+    background-color: #406689;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -17,7 +17,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 60%;
+    font-size: 1.2rem;
+    box-shadow: #051629 0px 3px 8px;
 }
 
 .weather-data-output img {

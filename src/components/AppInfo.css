@@ -1,11 +1,12 @@
 .app-info {
   border: 1px solid #112A46;
-  background-color: #112A46;
+  background-color: #406689;
   padding: 10px;
   width: 70vw;
   height: 20%;
   margin: 15px;
   border-radius: 15px;
+  box-shadow: #051629 0px 3px 8px;
 }
 
 .app-info h1 {

@@ -26,15 +26,18 @@
  width: 60%;
  height: 10%;
  border: none;
+ box-shadow: #051629 0px 3px 8px;
 }
 
 .search button {
-  background-color: #112A46;
+  background-color: #406689;
   border-radius: 20px;
   border: none;
   padding: 12px;
   width: 15%;
   color: white;
+  box-shadow: #051629 0px 3px 8px;
+  font-size: 1.1rem;
 }
 
 .weather-data h2{
