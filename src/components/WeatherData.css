@@ -20,6 +20,8 @@
     width: 60%;
     font-size: 1.2rem;
     box-shadow: #051629 0px 3px 8px;
+    margin-top: 20px;
+    height: 80%;
 }
 
 .weather-data-output img {
